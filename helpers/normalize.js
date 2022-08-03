@@ -3,6 +3,7 @@ const normalizeWheater = (json) => {
     const wheater = {
         city: json.location.name,
         country: json.location.country,
+        icon:json.current.condition.icon,
         temperatureC: json.current.temp_c,
         humidity: json.current.humidity,
         temperatureF: json.current.temp_f,
@@ -16,6 +17,7 @@ const normalizeWheater = (json) => {
             return {
                 date: day.date,
                 condition: day.day.condition.text,
+                icon:day.day.condition.icon,
                 temperatureC: day.day.avgtemp_c,
                 temperatureF: day.day.avgtemp_f,
                 maxTemperatureC: day.day.maxtemp_c,
